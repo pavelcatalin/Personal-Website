@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&family=Shippori+Mincho+B1:wght@600&display=swap');
+/*General*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0%;
+}
+
+section{
+    margin: 0 10%;
+}
+/*General*/
+
+/*Header Info*/
+.infoContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    font-family: 'Shippori Mincho B1', serif;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+}
+
+.info:nth-child(1)::after{
+    content: '';
+    width: 100px;
+    height: 2px;
+    background: black;
+    margin-left: 30px;
+}
+
+.info:nth-child(2)::after{
+    content: '';
+    width: 25px;
+    height: 2px;
+    background: black;
+    margin-left: 30px;
+}
+
+.info:nth-child(2) p:nth-child(2){
+    margin-left: 40px;
+}
+
+.headerText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+}
+
+.moveRight, .moveLeft{
+    font-size:11vw;
+    width: 100%;
+    text-transform: uppercase;
+    line-height: 10vw;
+    font-family: 'Nunito Sans', sans-serif;
+    
+}
+
+.headerText .moveLeft:nth-child(2){
+    text-align: right;
+}
+
+.headerText .moveLeft:nth-child(4){
+    text-align: center;
+}
