@@ -59,8 +59,7 @@ section{
     width: 100%;
     text-transform: uppercase;
     line-height: 10vw;
-    font-family: 'Nunito Sans', sans-serif;
-    
+    font-family: 'Nunito Sans', sans-serif;   
 }
 
 .headerText .moveLeft:nth-child(2){
