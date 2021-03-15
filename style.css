@@ -15,6 +15,7 @@ body{
 section{
     width:80%;
     margin: auto;
+    overflow: hidden;
 }
 /*General*/
 
@@ -128,6 +129,63 @@ section{
     z-index: 1;
     font-size: 4vw;
 }
+
+/*Description*/
+
+.descriptionContainer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 50vh;
+    padding-top: 70px;
+}
+
+.description{
+    flex: 1;
+    font-size: 2vw;
+    padding-right: 150px;
+    height: 100%;
+    line-height: 50px;
+    letter-spacing: 5px;
+}
+.date{
+    font-size: 40px;
+    flex: 1;
+}
+
+
+/*Projects*/
+
+.projectsContainer{
+    height: 80vh;
+    margin-top: 200px;
+}
+
+.project{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    border-bottom: 1px solid #7EC3B0;
+}
+
+.projectType{
+    flex: 3;
+}
+
+.projectName{
+    flex: 10;
+}
+
+.projectAgency{
+    flex: 1;
+}
+
+.projectDescription{
+    align-items: flex-end;
+    padding-bottom: 10px;
+}
+
 
 
 
