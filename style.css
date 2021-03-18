@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600&display=swap');
+@import url(//db.onlinewebfonts.com/c/2596224269750e00c3ad5356299a3b9f?family=Ogg);
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&family=Shippori+Mincho+B1:wght@600&display=swap');
+@import url(//db.onlinewebfonts.com/c/55d433372d270829c51e2577a78ef12d?family=Monument+Extended);
 /*General*/
 
 *{
@@ -10,7 +12,8 @@
 body{
     background-color: #F2F2F2;
     color: #7EC3B0;
-    animation: mover4 4s;  
+    animation: mover4 4s; 
+    font-family: 'Ogg'; 
 }
 section{
     width:80%;
@@ -29,7 +32,7 @@ section{
     align-items: center;
     width: 100%;
     height: 10vh;
-    font-family: 'Shippori Mincho B1', serif;
+    
 }
 
 .info{
@@ -83,7 +86,7 @@ section{
     width: 100%;
     text-transform: uppercase;
     line-height: 10vw;
-    font-family: 'Nunito Sans', sans-serif;   
+   
     animation: mover3 2s ease-in-out;
 }
 
@@ -127,7 +130,8 @@ section{
 .paragraph{
     position: absolute;
     z-index: 1;
-    font-size: 4vw;
+    font-size: 3.5vw;
+    font-family: "Ogg";
 }
 
 /*Description*/
@@ -147,12 +151,20 @@ section{
     height: 100%;
     line-height: 50px;
     letter-spacing: 5px;
+    font-family: "Ogg";
+    
 }
 .date{
     font-size: 40px;
     flex: 1;
+    font-family: "Ogg";
 }
 
+span{
+    margin-bottom: 40px;
+    animation: mover6 2s ease;
+    display: block;
+}
 
 /*Projects*/
 
@@ -166,7 +178,8 @@ section{
     align-items: center;
     justify-content: space-between;
     height: 150px;
-    border-bottom: 1px solid #7EC3B0;
+    border-bottom:1px solid black ;
+    animation: mover5 5s ease;
 }
 
 .projectType{
@@ -188,8 +201,43 @@ section{
 
 
 
+/*Contact*/
 
+.contactContainer{
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+}
 
+.links, .developerInfo{
+    flex: 1;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.developerInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back{
+    width: 100%;
+}
+
+.backContainer{
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: blanchedalmond;
+  
+}
 
 @keyframes mover{
     0%{
@@ -236,3 +284,22 @@ section{
         background-color:#F2F2F2;
     }
 }  
+
+@keyframes mover5{
+    0%{
+       border-color: wheat;
+    }
+
+    100%{
+        border-color:black;
+    }
+}
+
+@keyframes mover6{
+    from{
+       transform: translateY(-20px);
+    }
+    to{
+        transform: translateY(20px);
+    }
+}
