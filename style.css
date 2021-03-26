@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600&display=swap');
+
 @import url(//db.onlinewebfonts.com/c/2596224269750e00c3ad5356299a3b9f?family=Ogg);
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&family=Shippori+Mincho+B1:wght@600&display=swap');
+
 @import url(//db.onlinewebfonts.com/c/55d433372d270829c51e2577a78ef12d?family=Monument+Extended);
+
+@import url('http://fonts.cdnfonts.com/css/monument-extended');
 /*General*/
 
 *{
@@ -11,9 +13,10 @@
 }
 body{
     background-color: #F2F2F2;
-    color: #7EC3B0;
+    color: #326355;
     animation: mover4 4s; 
     font-family: 'Ogg'; 
+    
 }
 section{
     width:80%;
@@ -24,84 +27,100 @@ section{
 
 /*Header Info*/
 
-
-
-.infoContainer{
+.info-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 10vh;
-    
+    height: 10vh; 
 }
-
 .info{
-    display: flex;
+    display: none;
     align-items: center;
     min-width: 225px;
+    transition: 3s ease;
 }
-
 .info:nth-child(1)::after{
     content: '';
     width: 100px;
     height: 2px;
-    background: #7EC3B0;
+    background: #326355;
     margin-left: 30px;
-    animation: mover2 1.7s ease-in;
+    transition: ease 4s ;
+    animation: first-info 1.7s ease-in; 
 }
+@keyframes first-info{
+    0%{
+        width: 0px;
+    }
 
-
+    100%{
+        width: 100px;
+    }
+}
 .info:nth-child(2)::after{
     content: '';
     width: 25px;
     height: 2px;
-    background: #7EC3B0;
+    background: #326355;
     margin-left: 30px;
-    animation: mover 1.7s ease-in;
+    animation: second-info 1.7s ease-in; 
 }
-
+@keyframes second-info{
+    0%{
+        width: 0px;  
+    }
+    100%{
+        width: 25px;
+    }
+}
 #year{
     margin-left: 40px;
 }
+ 
+/*Header Text - section 2*/
 
-/*Header Text*/
-
-.headerText{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-}
-
-.textContainer{
+.text-container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 79%;
+    height: 70vh;
+    margin-top: 10vh;
 }
-.textMove{
-    font-size:11vw;
+
+.text-move{
+    font-size:10vw;
     width: 100%;
     text-transform: uppercase;
-    line-height: 10vw;
-   
-    animation: mover3 2s ease-in-out;
+    line-height: 9vw;
+    animation: mover3 4s ease-in-out;
+    font-family: 'Monument Extended', sans-serif;
 }
 
-.headerText .moveLeft:nth-child(2){
-    text-align: right;
+@keyframes mover3{
+    from{
+       height: 0px;
+       
+    }
+
+    to{
+        height: 100%;
+    } 
+}
+.header-text .move-left:nth-child(2){
+    text-align: right; 
 }
 
-.headerText .moveLeft:nth-child(4){
+.header-text .move-left:nth-child(4){
     text-align: center;
 }
 
 
-/*Greeting*/
+/*Welcome message - section 3*/
 
-.messageContainer{
+.message-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -109,6 +128,7 @@ section{
     overflow: hidden;  
     margin: 150px 0;
     position: relative;
+    margin-bottom: 20vh;
 }
 .image{
     width: 100%;
@@ -119,7 +139,7 @@ section{
 }
 .image img{
     overflow: hidden;
-    width: 700px;
+    width: 650px;
     position: absolute;
     top: -220px;
     right: 0px;
@@ -127,48 +147,46 @@ section{
     opacity: 0.6;
 }
 
-.paragraph{
+.paragraph {
     position: absolute;
     z-index: 1;
-    font-size: 3.5vw;
+    font-size: 3vw;
     font-family: "Ogg";
 }
 
-/*Description*/
+/*Description - section 4*/
 
-.descriptionContainer{
+.description-container{
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    height: 50vh;
-    padding-top: 70px;
+    height: 70vh;
 }
-
 .description{
     flex: 1;
-    font-size: 2vw;
-    padding-right: 150px;
-    height: 100%;
-    line-height: 50px;
-    letter-spacing: 5px;
-    font-family: "Ogg";
-    
+    font-size: 25px;
+    padding-right: 100px;
+    line-height: 40px;
+    font-family: "Ogg";    
 }
 .date{
     font-size: 40px;
     flex: 1;
     font-family: "Ogg";
 }
-
-span{
-    margin-bottom: 40px;
-    animation: mover6 2s ease;
+.description span{
+    animation: mover6 2.5s ease;
     display: block;
 }
 
-/*Projects*/
+/*Projects */
+.line{
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    animation: mover-line 3s ease;
+}
 
-.projectsContainer{
+.projects-container{
     height: 80vh;
     margin-top: 200px;
 }
@@ -178,8 +196,8 @@ span{
     align-items: center;
     justify-content: space-between;
     height: 150px;
-    border-bottom:1px solid black ;
     animation: mover5 5s ease;
+    font-size: 25px;
 }
 
 .projectType{
@@ -199,7 +217,13 @@ span{
     padding-bottom: 10px;
 }
 
-
+.project a{
+    text-decoration: none;
+    color:black;
+    font-size: 2vw;
+    font-family: 'Monument Extended', sans-serif;
+    text-transform: uppercase;
+}
 
 /*Contact*/
 
@@ -207,6 +231,7 @@ span{
     height: 40vh;
     display: flex;
     flex-direction: column;
+    margin-top: 7vh
 }
 
 .links, .developerInfo{
@@ -218,16 +243,31 @@ span{
     align-items: flex-end;
     justify-content: flex-end;
 }
+.links a{
+    text-decoration: none;
+    font-size: 2vw;
+    color: black;
+    font-family: 'Monument Extended', sans-serif;
+}
 .developerInfo{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    padding-bottom: 30px;
 }
 
+/* Back to top*/
 .back{
     width: 100%;
 }
 
+.back h1{
+    text-transform: uppercase;
+    font-size: 4vw;
+    font-family: 'Monument Extended', sans-serif;
+    letter-spacing: 15px;
+    color: #F2F2F2;
+}
 .backContainer{
     height: 15vh;
     width: 100%;
@@ -236,42 +276,20 @@ span{
     justify-content: center;
     background-color: black;
     color: blanchedalmond;
-  
 }
 
-@keyframes mover{
-    0%{
-        width: 0px;
-        
-    }
-
-    100%{
-        width: 25px;
-        
-    }
+.moving-up{
+    display: inline-block;
 }
 
-@keyframes mover2{
-    0%{
-        width: 0px;
-    }
-
-    100%{
-        width: 100px;
-    }
-}
-
-@keyframes mover3{
+@keyframes animate{
     from{
-       transform: translateY(-70px);
-       
+       transform: translateY(+80px);
     }
-
     to{
         transform: translateY(0px);
-        
     } 
-}
+} 
 
 @keyframes mover4{
     from{
@@ -297,9 +315,20 @@ span{
 
 @keyframes mover6{
     from{
-       transform: translateY(-20px);
+        opacity: 0;
+       transform: translateY(+40px);
     }
     to{
-        transform: translateY(20px);
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes mover-line{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
     }
 }

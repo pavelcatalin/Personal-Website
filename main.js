@@ -1,13 +1,43 @@
-window.addEventListener("scroll", function(){
+window.addEventListener("scroll", movingTitle);
+window.addEventListener('load', delayHeader());
+
+function movingTitle(){
   var scrollInfo= window.pageYOffset;
-  var moveLeft = document.querySelectorAll(".moveLeft")[0];
-  moveLeft.style.transform = `translateX(-${scrollInfo *0.025}%)`;
+  var moveLeft = document.querySelectorAll(".move-left")[0];
+  moveLeft.style.transform = `translateX(-${scrollInfo *0.0035}%)`;
   
-  var moveLeft1 = document.querySelectorAll(".moveLeft")[1];
+  var moveLeft1 = document.querySelectorAll(".move-left")[1];
   moveLeft1.style.transform = `translateX(-${scrollInfo *0.005}%)`;
-  var moveRight = document.querySelectorAll(".moveRight")[0];
-  var moveRight = document.querySelectorAll(".moveRight")[1];
+  var moveRight = document.querySelectorAll(".move-right")[0];
+  moveRight.style.transform = `translateX(${scrollInfo *0.0035}%)`;
+  var moveRight = document.querySelectorAll(".move-right")[1];
   moveRight.style.transform = `translateX(${scrollInfo *0.015}%)`;
   var moveImg = document.querySelector("#moveImg");
   moveImg.style.transform = `translateY(${scrollInfo *0.025}%)`;
-})
+
+  
+    var titleCollection = document.querySelectorAll(".moving-up");
+    var screenDimension = window.innerHeight;
+
+  for (var i = 0; i < titleCollection.length ; i++){
+    var elements = titleCollection[i];
+    var elemPosition = elements.getBoundingClientRect().top;
+    
+    
+    if( elemPosition -20 < screenDimension  ){
+   elements.style.animation = "animate 1s"
+  }
+    
+  }
+
+ 
+}
+
+function delayHeader(){
+  
+  setTimeout(()=>{
+   var allInfo = document.querySelectorAll('.info');
+   allInfo.forEach(elem =>elem.style.display = 'flex')
+  },2500)
+
+};
