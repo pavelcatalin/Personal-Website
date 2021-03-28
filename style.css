@@ -1,9 +1,11 @@
-
-@import url(//db.onlinewebfonts.com/c/2596224269750e00c3ad5356299a3b9f?family=Ogg);
-
-@import url(//db.onlinewebfonts.com/c/55d433372d270829c51e2577a78ef12d?family=Monument+Extended);
-
-@import url('http://fonts.cdnfonts.com/css/monument-extended');
+@font-face{
+    font-family: Monument Extended;
+    src: url(fonts/MonumentExtended/MonumentExtended-Regular.otf);
+}
+@font-face{
+    font-family: Ogg;
+    src: url(fonts/Ogg/Ogg-Roman.otf);
+}
 /*General*/
 
 *{
@@ -14,9 +16,7 @@
 body{
     background-color: #F2F2F2;
     color: #326355;
-    animation: mover4 4s; 
     font-family: 'Ogg'; 
-    
 }
 section{
     width:80%;
@@ -25,7 +25,7 @@ section{
 }
 /*General*/
 
-/*Header Info*/
+/*Header Info - section 1*/
 
 .info-container{
     display: flex;
@@ -91,22 +91,24 @@ section{
 }
 
 .text-move{
-    font-size:10vw;
+    font-size:6.5vw;
     width: 100%;
     text-transform: uppercase;
     line-height: 9vw;
-    animation: mover3 4s ease-in-out;
+    /*animation: mover3 6s ease-in-out;*/
     font-family: 'Monument Extended', sans-serif;
+    overflow: hidden;
 }
-
+.text-move h1{
+    animation: mover3 2.5s ease ;
+}
 @keyframes mover3{
     from{
-       height: 0px;
-       
+       transform: translateY(+160px);
     }
 
     to{
-        height: 100%;
+        transform: translateY(0px);
     } 
 }
 .header-text .move-left:nth-child(2){
@@ -115,6 +117,7 @@ section{
 
 .header-text .move-left:nth-child(4){
     text-align: center;
+    padding-left: 25vw;
 }
 
 
@@ -139,7 +142,7 @@ section{
 }
 .image img{
     overflow: hidden;
-    width: 650px;
+    width: 630px;
     position: absolute;
     top: -220px;
     right: 0px;
@@ -154,6 +157,14 @@ section{
     font-family: "Ogg";
 }
 
+@keyframes image-opacity{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 0.6;
+    }
+} 
 /*Description - section 4*/
 
 .description-container{
@@ -172,6 +183,7 @@ section{
     font-size: 40px;
     flex: 1;
     font-family: "Ogg";
+    font-weight: bold;
 }
 .description span{
     animation: mover6 2.5s ease;
@@ -180,10 +192,9 @@ section{
 
 /*Projects */
 .line{
-    width: 100%;
     height: 1px;
     background-color: black;
-    animation: mover-line 3s ease;
+    animation:  ease;
 }
 
 .projects-container{
@@ -191,7 +202,7 @@ section{
     margin-top: 200px;
 }
 
-.project{
+.projects{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -213,14 +224,16 @@ section{
 }
 
 .projectDescription{
+    display: flex;
     align-items: flex-end;
     padding-bottom: 10px;
+    font-size: 25px;
 }
 
 .project a{
     text-decoration: none;
     color:black;
-    font-size: 2vw;
+    font-size: 3vw;
     font-family: 'Monument Extended', sans-serif;
     text-transform: uppercase;
 }
@@ -245,7 +258,7 @@ section{
 }
 .links a{
     text-decoration: none;
-    font-size: 2vw;
+    font-size: 3vw;
     color: black;
     font-family: 'Monument Extended', sans-serif;
 }
@@ -265,11 +278,11 @@ section{
     text-transform: uppercase;
     font-size: 4vw;
     font-family: 'Monument Extended', sans-serif;
-    letter-spacing: 15px;
+    letter-spacing: 5px;
     color: #F2F2F2;
 }
 .backContainer{
-    height: 15vh;
+    height: 20vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -277,7 +290,9 @@ section{
     background-color: black;
     color: blanchedalmond;
 }
-
+.projectName{
+    overflow: hidden;
+}
 .moving-up{
     display: inline-block;
 }
@@ -332,3 +347,70 @@ section{
         width: 100%;
     }
 }
+
+@media screen and (max-width: 1024px){
+   section{
+       width: 90%;
+   }
+    
+}
+
+@media screen and (max-width: 768px){
+    .text-container{
+        height: 55vh;
+    }
+    .paragraph{
+        bottom: 0;
+    }
+ }
+
+ @media screen and (max-width: 425px){
+    .info:nth-child(1)::after, .info:nth-child(2)::after{
+        display: none;
+    }
+    .text-container{
+        height: 40vh;
+    }
+    .message-container{
+        height: 50vh;
+        margin-top: 0;
+    }
+    .image{
+        height: 200px;
+    }
+    .image img{
+        right: -120px;
+    }
+    .paragraph{
+        font-size: 4vw;
+        bottom: 80px;
+    }
+    .description-container{
+        flex-direction: column;
+    }
+    .description{
+        font-size: 18px;
+        line-height: 25px;
+        padding: 0;
+    }
+    .projectDescription{
+       display: inline-flex;
+    }
+    .type, .name, .agency{
+        display: inline-block;
+        padding-right: 20px;
+    }
+    .projects{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        font-size: 20px;
+    }
+    .project-info{
+        flex: 1;
+    }
+    .project-info a,.links a{
+        font-size: 5vw;
+    }
+ }

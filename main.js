@@ -21,15 +21,40 @@ function movingTitle(){
 
   for (var i = 0; i < titleCollection.length ; i++){
     var elements = titleCollection[i];
-    var elemPosition = elements.getBoundingClientRect().top;
+    var elemPosition = elements.getBoundingClientRect().top ;
+   
     
     
-    if( elemPosition -20 < screenDimension  ){
-   elements.style.animation = "animate 1s"
+    if( elemPosition  < screenDimension  ){
+      elements.style.animation = "animate 2s"
+   
   }
     
   }
 
+  var movingLine = document.querySelectorAll('.line');
+  for (var i = 0; i < movingLine.length ; i++){
+    let elements = movingLine[i];
+    var elemPosition = elements.getBoundingClientRect().top ;
+  
+    if( elemPosition  < screenDimension  ){
+      
+        elements.style.animation = "mover-line 3s";
+       
+   
+  }
+    
+  }
+
+  var image = document.querySelector('img');
+  var imgPosition = image.getBoundingClientRect().top;
+
+ if( imgPosition  < screenDimension  ){
+      
+        image.style.animation = "image-opacity 7s";
+       
+   
+  }
  
 }
 
