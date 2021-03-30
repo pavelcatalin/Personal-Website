@@ -348,11 +348,17 @@ section{
     }
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1224px){
    section{
        width: 90%;
    }
-    
+   .description{
+       flex: 2;
+       padding-right: 0;
+   }
+   .paragraph{
+       font-size: 35px;
+   }
 }
 
 @media screen and (max-width: 768px){
@@ -360,8 +366,18 @@ section{
         height: 55vh;
     }
     .paragraph{
-        bottom: 0;
+        bottom: 40px;
+        font-size: 4vw;
     }
+    .image{
+        height: 300px;
+        width: 90%;
+        right: 0;
+    }
+    .description-container{
+        flex-direction: column;
+    }
+    
  }
 
  @media screen and (max-width: 425px){
@@ -377,12 +393,13 @@ section{
     }
     .image{
         height: 200px;
+        width: 100%;
     }
     .image img{
         right: -120px;
     }
     .paragraph{
-        font-size: 4vw;
+        font-size: 19px;
         bottom: 80px;
     }
     .description-container{

@@ -7,7 +7,7 @@ function movingTitle(){
   moveLeft.style.transform = `translateX(-${scrollInfo *0.0035}%)`;
   
   var moveLeft1 = document.querySelectorAll(".move-left")[1];
-  moveLeft1.style.transform = `translateX(-${scrollInfo *0.005}%)`;
+  moveLeft1.style.transform = `translateX(-${scrollInfo *0.02}%)`;
   var moveRight = document.querySelectorAll(".move-right")[0];
   moveRight.style.transform = `translateX(${scrollInfo *0.0035}%)`;
   var moveRight = document.querySelectorAll(".move-right")[1];
