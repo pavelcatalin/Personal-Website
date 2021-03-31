@@ -26,8 +26,9 @@ function movingTitle(){
     
     
     if( elemPosition  < screenDimension  ){
+      
+      elements.style.visibility ="visible";
       elements.style.animation = "animate 2s"
-   
   }
     
   }
@@ -38,24 +39,32 @@ function movingTitle(){
     var elemPosition = elements.getBoundingClientRect().top ;
   
     if( elemPosition  < screenDimension  ){
-      
+        
         elements.style.animation = "mover-line 3s";
-       
+        
    
   }
-    
+  
   }
 
   var image = document.querySelector('img');
   var imgPosition = image.getBoundingClientRect().top;
 
  if( imgPosition  < screenDimension  ){
-      
+        image.style.display="block";
         image.style.animation = "image-opacity 7s";
        
    
   }
+ var date = document.querySelector('.date p');
+ var datePosition = date.getBoundingClientRect().top;
+ var date1 = document.querySelector('.description-text').style.overflow = "visible";
  
+ console.log(datePosition)
+ if(datePosition < screenDimension){
+    date.style.position = "sticky";
+    date.style.top = '0';
+ }
 }
 
 function delayHeader(){

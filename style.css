@@ -13,6 +13,9 @@
     margin: 0;
     padding: 0;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: #F2F2F2;
     color: #326355;
@@ -22,6 +25,10 @@ section{
     width:80%;
     margin: auto;
     overflow: hidden;
+}
+
+.moving-up{
+    display: inline-block;
 }
 /*General*/
 
@@ -211,19 +218,20 @@ section{
     font-size: 25px;
 }
 
-.projectType{
+.project-type{
     flex: 3;
 }
 
-.projectName{
+.project-name{
     flex: 10;
+    overflow: hidden;
 }
 
-.projectAgency{
+.project-agency{
     flex: 1;
 }
 
-.projectDescription{
+.project-description{
     display: flex;
     align-items: flex-end;
     padding-bottom: 10px;
@@ -240,14 +248,14 @@ section{
 
 /*Contact*/
 
-.contactContainer{
+.contact-container{
     height: 40vh;
     display: flex;
     flex-direction: column;
     margin-top: 7vh
 }
 
-.links, .developerInfo{
+.links, .developer-info{
     flex: 1;
 }
 .links{
@@ -262,7 +270,7 @@ section{
     color: black;
     font-family: 'Monument Extended', sans-serif;
 }
-.developerInfo{
+.developer-info{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -270,18 +278,19 @@ section{
 }
 
 /* Back to top*/
-.back{
+.back-top{
     width: 100%;
 }
 
-.back h1{
+.back-top h1 a{
     text-transform: uppercase;
     font-size: 4vw;
     font-family: 'Monument Extended', sans-serif;
     letter-spacing: 5px;
     color: #F2F2F2;
+    text-decoration: none;
 }
-.backContainer{
+.back-container{
     height: 20vh;
     width: 100%;
     display: flex;
@@ -290,12 +299,8 @@ section{
     background-color: black;
     color: blanchedalmond;
 }
-.projectName{
-    overflow: hidden;
-}
-.moving-up{
-    display: inline-block;
-}
+
+
 
 @keyframes animate{
     from{
@@ -380,7 +385,17 @@ section{
     
  }
 
- @media screen and (max-width: 425px){
+ @media screen and (max-width: 560px){
+     .info{
+         flex: 1;
+         min-width: 144px;
+     }
+     #year{
+         margin-left: 20px;
+     }
+     .info:nth-child(2){
+         justify-content: flex-end;
+     }
     .info:nth-child(1)::after, .info:nth-child(2)::after{
         display: none;
     }
@@ -396,12 +411,14 @@ section{
         width: 100%;
     }
     .image img{
-        right: -120px;
+        right: -160px;
+        display: none;
     }
     .paragraph{
         font-size: 19px;
-        bottom: 80px;
+        bottom: 75px;
     }
+   
     .description-container{
         flex-direction: column;
     }
@@ -428,6 +445,10 @@ section{
         flex: 1;
     }
     .project-info a,.links a{
-        font-size: 5vw;
+        font-size: 4.5vw;
+    }
+    .moving-up{
+       visibility: hidden;
+       display: inline;
     }
  }
