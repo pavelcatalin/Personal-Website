@@ -1,23 +1,36 @@
-window.addEventListener("scroll", movingTitle);
+window.addEventListener("scroll", movingOnScroll);
 window.addEventListener('load', delayHeader());
 
-function movingTitle(){
+function movingOnScroll(){
   var scrollInfo= window.pageYOffset;
-  var moveLeft = document.querySelectorAll(".move-left")[0];
-  moveLeft.style.transform = `translateX(-${scrollInfo *0.0035}%)`;
-  
-  var moveLeft1 = document.querySelectorAll(".move-left")[1];
-  moveLeft1.style.transform = `translateX(-${scrollInfo *0.02}%)`;
-  var moveRight = document.querySelectorAll(".move-right")[0];
-  moveRight.style.transform = `translateX(${scrollInfo *0.0035}%)`;
-  var moveRight = document.querySelectorAll(".move-right")[1];
-  moveRight.style.transform = `translateX(${scrollInfo *0.015}%)`;
-  var moveImg = document.querySelector("#moveImg");
-  moveImg.style.transform = `translateY(${scrollInfo *0.025}%)`;
+  var screenDimension = window.innerHeight;
 
+
+    function movingHeader(){
+    var moveLeftFirst = document.querySelectorAll(".move-left")[0];
+    moveLeftFirst.style.transform = `translateX(-${scrollInfo *0.0035}%)`;
   
+    var moveLeftSecond = document.querySelectorAll(".move-left")[1];
+    moveLeftSecond.style.transform = `translateX(-${scrollInfo *0.02}%)`;
+
+    var moveRightFirst = document.querySelectorAll(".move-right")[0];
+    moveRightFirst.style.transform = `translateX(${scrollInfo *0.0035}%)`;
+    
+    var moveRightSecond = document.querySelectorAll(".move-right")[1];
+    moveRightSecond.style.transform = `translateX(${scrollInfo *0.015}%)`;
+   
+    };
+    movingHeader();
+
+    function movingImage(){
+    var moveImg = document.querySelector("#moveImg");
+    moveImg.style.transform = `translateY(${scrollInfo *0.025}%)`;
+    };
+    movingImage();
+  
+    function movingUp(){
     var titleCollection = document.querySelectorAll(".moving-up");
-    var screenDimension = window.innerHeight;
+    
 
   for (var i = 0; i < titleCollection.length ; i++){
     var elements = titleCollection[i];
@@ -32,39 +45,47 @@ function movingTitle(){
   }
     
   }
-
-  var movingLine = document.querySelectorAll('.line');
-  for (var i = 0; i < movingLine.length ; i++){
-    let elements = movingLine[i];
+    };
+    movingUp();
+  
+    function movingLine(){
+    var movingLines = document.querySelectorAll('.line');
+  for (var i = 0; i < movingLines.length ; i++){
+    let elements = movingLines[i];
     var elemPosition = elements.getBoundingClientRect().top ;
   
-    if( elemPosition  < screenDimension  ){
-        
+    if( elemPosition  < screenDimension  ){   
         elements.style.animation = "mover-line 3s";
-        
-   
-  }
+      }
   
-  }
+    }
+    };
+    movingLine();
 
-  var image = document.querySelector('img');
-  var imgPosition = image.getBoundingClientRect().top;
 
- if( imgPosition  < screenDimension  ){
+    function imageReveal(){
+    var image = document.querySelector('img');
+    var imgPosition = image.getBoundingClientRect().top;
+
+    if( imgPosition  < screenDimension  ){
         image.style.display="block";
         image.style.animation = "image-opacity 7s";
-       
-   
+    }
+    };
+    imageReveal();
+
+    function stickyYear(){
+  var year = document.querySelector('.date p');
+  var yearPosition = year.getBoundingClientRect().top;
+  var date1 = document.querySelector('.description-text').style.overflow = "visible";
+  
+  
+  if(yearPosition < screenDimension){
+     year.style.position = "sticky";
+     year.style.top = '0';
   }
- var date = document.querySelector('.date p');
- var datePosition = date.getBoundingClientRect().top;
- var date1 = document.querySelector('.description-text').style.overflow = "visible";
- 
- console.log(datePosition)
- if(datePosition < screenDimension){
-    date.style.position = "sticky";
-    date.style.top = '0';
- }
+    };
+    stickyYear();
 }
 
 function delayHeader(){

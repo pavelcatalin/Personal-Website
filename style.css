@@ -6,6 +6,8 @@
     font-family: Ogg;
     src: url(fonts/Ogg/Ogg-Roman.otf);
 }
+
+
 /*General*/
 
 *{
@@ -30,7 +32,18 @@ section{
 .moving-up{
     display: inline-block;
 }
+
+@keyframes animate{
+    from{
+       transform: translateY(+80px);
+    }
+    to{
+        transform: translateY(0px);
+    } 
+} 
 /*General*/
+
+
 
 /*Header Info - section 1*/
 
@@ -193,7 +206,6 @@ section{
     font-weight: bold;
 }
 .description span{
-    animation: mover6 2.5s ease;
     display: block;
 }
 
@@ -245,6 +257,15 @@ section{
     font-family: 'Monument Extended', sans-serif;
     text-transform: uppercase;
 }
+@keyframes mover-line{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+
 
 /*Contact*/
 
@@ -301,57 +322,6 @@ section{
 }
 
 
-
-@keyframes animate{
-    from{
-       transform: translateY(+80px);
-    }
-    to{
-        transform: translateY(0px);
-    } 
-} 
-
-@keyframes mover4{
-    from{
-     
-        background-color:#7EC3B0;
-    }
-
-    to{
-        
-        background-color:#F2F2F2;
-    }
-}  
-
-@keyframes mover5{
-    0%{
-       border-color: wheat;
-    }
-
-    100%{
-        border-color:black;
-    }
-}
-
-@keyframes mover6{
-    from{
-        opacity: 0;
-       transform: translateY(+40px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
-
-@keyframes mover-line{
-    from{
-        width: 0;
-    }
-    to{
-        width: 100%;
-    }
-}
 
 @media screen and (max-width: 1224px){
    section{
@@ -427,12 +397,13 @@ section{
         line-height: 25px;
         padding: 0;
     }
-    .projectDescription{
+    .project-description{
        display: inline-flex;
     }
     .type, .name, .agency{
         display: inline-block;
         padding-right: 20px;
+        
     }
     .projects{
         display: flex;
