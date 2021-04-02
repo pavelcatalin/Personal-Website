@@ -297,6 +297,9 @@ section{
     align-items: flex-end;
     padding-bottom: 30px;
 }
+.link{
+    overflow: hidden;
+}
 
 /* Back to top*/
 .back-top{
@@ -370,7 +373,7 @@ section{
         display: none;
     }
     .text-container{
-        height: 40vh;
+        height: 50vh;
     }
     .message-container{
         height: 50vh;
@@ -378,17 +381,19 @@ section{
     }
     .image{
         height: 200px;
-        width: 100%;
+        width: 90%;
     }
     .image img{
-        right: -160px;
+        right: -180px;
         display: none;
     }
     .paragraph{
         font-size: 19px;
         bottom: 75px;
     }
-   
+    .paragraph span{
+        display: inline;
+    }
     .description-container{
         flex-direction: column;
     }
@@ -411,6 +416,7 @@ section{
         align-items: flex-start;
         justify-content: space-around;
         font-size: 20px;
+        margin-top: 10px;
     }
     .project-info{
         flex: 1;
@@ -420,6 +426,5 @@ section{
     }
     .moving-up{
        visibility: hidden;
-       display: inline;
     }
  }
