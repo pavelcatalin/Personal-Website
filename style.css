@@ -1,430 +1,426 @@
-@font-face{
-    font-family: Monument Extended;
-    src: url(fonts/MonumentExtended/MonumentExtended-Regular.otf);
+@font-face {
+  font-family: Monument Extended;
+  src: url(fonts/MonumentExtended/MonumentExtended-Regular.otf);
 }
-@font-face{
-    font-family: Ogg;
-    src: url(fonts/Ogg/Ogg-Roman.otf);
+@font-face {
+  font-family: Ogg;
+  src: url(fonts/Ogg/Ogg-Roman.otf);
 }
-
 
 /*General*/
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
-body{
-    background-color: #F2F2F2;
-    color: #326355;
-    font-family: 'Ogg'; 
+body {
+  background-color: #f2f2f2;
+  color: #326355;
+  font-family: "Ogg";
 }
-section{
-    width:80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-.moving-up{
-    display: inline-block;
+section {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
 }
 
-@keyframes animate{
-    from{
-       transform: translateY(+80px);
-    }
-    to{
-        transform: translateY(0px);
-    } 
-} 
+.moving-up {
+  display: inline-block;
+}
+
+@keyframes animate {
+  from {
+    transform: translateY(+80px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
 /*General*/
-
-
 
 /*Header Info - section 1*/
 
-.info-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 10vh; 
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
 }
-.info{
-    display: none;
-    align-items: center;
-    min-width: 225px;
-    transition: 3s ease;
+.info {
+  display: none;
+  align-items: center;
+  min-width: 225px;
+  transition: 3s ease;
 }
-.info:nth-child(1)::after{
-    content: '';
-    width: 100px;
-    height: 2px;
-    background: #326355;
-    margin-left: 30px;
-    transition: ease 4s ;
-    animation: first-info 1.7s ease-in; 
+.info:nth-child(1)::after {
+  content: "";
+  width: 100px;
+  height: 2px;
+  background: #326355;
+  margin-left: 30px;
+  transition: ease 4s;
+  animation: first-info 1.7s ease-in;
 }
-@keyframes first-info{
-    0%{
-        width: 0px;
-    }
+@keyframes first-info {
+  0% {
+    width: 0px;
+  }
 
-    100%{
-        width: 100px;
-    }
+  100% {
+    width: 100px;
+  }
 }
-.info:nth-child(2)::after{
-    content: '';
+.info:nth-child(2)::after {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background: #326355;
+  margin-left: 30px;
+  animation: second-info 1.7s ease-in;
+}
+@keyframes second-info {
+  0% {
+    width: 0px;
+  }
+  100% {
     width: 25px;
-    height: 2px;
-    background: #326355;
-    margin-left: 30px;
-    animation: second-info 1.7s ease-in; 
+  }
 }
-@keyframes second-info{
-    0%{
-        width: 0px;  
-    }
-    100%{
-        width: 25px;
-    }
+#year {
+  margin-left: 40px;
 }
-#year{
-    margin-left: 40px;
-}
- 
+
 /*Header Text - section 2*/
 
-.text-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 70vh;
-    margin-top: 10vh;
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 70vh;
+  margin-top: 10vh;
 }
 
-.text-move{
-    font-size:6.5vw;
-    width: 100%;
-    text-transform: uppercase;
-    line-height: 9vw;
-    /*animation: mover3 6s ease-in-out;*/
-    font-family: 'Monument Extended', sans-serif;
-    overflow: hidden;
+.text-move {
+  font-size: 6.5vw;
+  width: 100%;
+  text-transform: uppercase;
+  line-height: 9vw;
+  /*animation: mover3 6s ease-in-out;*/
+  font-family: "Monument Extended", sans-serif;
+  overflow: hidden;
 }
-.text-move h1{
-    animation: mover3 2.5s ease ;
+.text-move h1 {
+  animation: mover3 2.5s ease;
 }
-@keyframes mover3{
-    from{
-       transform: translateY(+160px);
-    }
+@keyframes mover3 {
+  from {
+    transform: translateY(+160px);
+  }
 
-    to{
-        transform: translateY(0px);
-    } 
+  to {
+    transform: translateY(0px);
+  }
 }
-.header-text .move-left:nth-child(2){
-    text-align: right; 
-}
-
-.header-text .move-left:nth-child(4){
-    text-align: center;
-    padding-left: 25vw;
+.header-text .move-left:nth-child(2) {
+  text-align: right;
 }
 
+.header-text .move-left:nth-child(4) {
+  text-align: center;
+  padding-left: 25vw;
+}
 
 /*Welcome message - section 3*/
 
-.message-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 60vh;
-    overflow: hidden;  
-    margin: 150px 0;
-    position: relative;
-    margin-bottom: 20vh;
+.message-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60vh;
+  overflow: hidden;
+  margin: 150px 0;
+  position: relative;
+  margin-bottom: 20vh;
 }
-.image{
-    width: 100%;
-    height: 360px;
-    position: absolute;
-    z-index: 0;
-    overflow: hidden;
+.image {
+  width: 100%;
+  height: 360px;
+  position: absolute;
+  z-index: 0;
+  overflow: hidden;
 }
-.image img{
-    overflow: hidden;
-    width: 630px;
-    position: absolute;
-    top: -220px;
-    right: 0px;
-    z-index: 0;
-    opacity: 0.6;
+.image img {
+  overflow: hidden;
+  width: 630px;
+  position: absolute;
+  top: -220px;
+  right: 0px;
+  z-index: 0;
+  opacity: 0.6;
 }
 
 .paragraph {
-    position: absolute;
-    z-index: 1;
-    font-size: 3vw;
-    font-family: "Ogg";
+  position: absolute;
+  z-index: 1;
+  font-size: 3vw;
+  font-family: "Ogg";
 }
 
-@keyframes image-opacity{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 0.6;
-    }
-} 
+@keyframes image-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
 /*Description - section 4*/
 
-.description-container{
-    display: flex;
-    justify-content: center;
-    height: 70vh;
+.description-container {
+  display: flex;
+  justify-content: center;
+  height: 70vh;
 }
-.description{
-    flex: 1;
-    font-size: 25px;
-    padding-right: 100px;
-    line-height: 40px;
-    font-family: "Ogg";    
+.description {
+  flex: 1;
+  font-size: 25px;
+  padding-right: 100px;
+  line-height: 40px;
+  font-family: "Ogg";
 }
-.date{
-    font-size: 40px;
-    flex: 1;
-    font-family: "Ogg";
-    font-weight: bold;
+.date {
+  font-size: 40px;
+  flex: 1;
+  font-family: "Ogg";
+  font-weight: bold;
 }
-.description span{
-    display: block;
+.description span {
+  display: block;
 }
 
 /*Projects */
-.line{
-    height: 1px;
-    background-color: black;
-    animation:  ease;
+.line {
+  height: 1px;
+  background-color: black;
+  animation: ease;
 }
 
-.projects-container{
-    height: 80vh;
-    margin-top: 200px;
+.projects-container {
+  height: 80vh;
+  margin-top: 200px;
 }
 
-.projects{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 150px;
-    animation: mover5 5s ease;
-    font-size: 25px;
+.projects {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 150px;
+  animation: mover5 5s ease;
+  font-size: 25px;
 }
 
-.project-type{
-    flex: 3;
+.project-type {
+  flex: 3;
 }
 
-.project-name{
-    flex: 10;
-    overflow: hidden;
+.project-name {
+  flex: 10;
+  overflow: hidden;
 }
 
-.project-agency{
-    flex: 1;
+.project-agency {
+  flex: 1;
 }
 
-.project-description{
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 10px;
-    font-size: 25px;
+.project-description {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 10px;
+  font-size: 25px;
 }
 
-.project a{
-    text-decoration: none;
-    color:black;
-    font-size: 3vw;
-    font-family: 'Monument Extended', sans-serif;
-    text-transform: uppercase;
+.project a {
+  text-decoration: none;
+  color: black;
+  font-size: 3vw;
+  font-family: "Monument Extended", sans-serif;
+  text-transform: uppercase;
 }
-@keyframes mover-line{
-    from{
-        width: 0;
-    }
-    to{
-        width: 100%;
-    }
+@keyframes mover-line {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
-
 
 /*Contact*/
 
-.contact-container{
-    height: 40vh;
-    display: flex;
-    flex-direction: column;
-    margin-top: 7vh
+.contact-container {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 7vh;
 }
 
-.links, .developer-info{
-    flex: 1;
+.links,
+.developer-info {
+  flex: 1;
 }
-.links{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
-.links a{
-    text-decoration: none;
-    font-size: 3vw;
-    color: black;
-    font-family: 'Monument Extended', sans-serif;
+.links a {
+  text-decoration: none;
+  font-size: 3vw;
+  color: black;
+  font-family: "Monument Extended", sans-serif;
 }
-.developer-info{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding-bottom: 30px;
+.developer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 30px;
 }
-.link{
-    overflow: hidden;
+.link {
+  overflow: hidden;
 }
 
 /* Back to top*/
-.back-top{
-    width: 100%;
+.back-top {
+  width: 100%;
 }
 
-.back-top h1 a{
-    text-transform: uppercase;
+.back-top h1 a {
+  text-transform: uppercase;
+  font-size: 4vw;
+  font-family: "Monument Extended", sans-serif;
+  letter-spacing: 5px;
+  color: #f2f2f2;
+  text-decoration: none;
+}
+.back-container {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: blanchedalmond;
+}
+
+@media screen and (max-width: 1224px) {
+  section {
+    width: 90%;
+  }
+  .description {
+    flex: 2;
+    padding-right: 0;
+  }
+  .paragraph {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .text-container {
+    height: 55vh;
+  }
+  .paragraph {
+    bottom: 40px;
     font-size: 4vw;
-    font-family: 'Monument Extended', sans-serif;
-    letter-spacing: 5px;
-    color: #F2F2F2;
-    text-decoration: none;
+  }
+  .image {
+    height: 300px;
+    width: 90%;
+    right: 0;
+  }
+  .description-container {
+    flex-direction: column;
+  }
 }
-.back-container{
-    height: 20vh;
-    width: 100%;
+
+@media screen and (max-width: 560px) {
+  .info {
+    flex: 1;
+    min-width: 144px;
+  }
+  #year {
+    margin-left: 20px;
+  }
+  .info:nth-child(2) {
+    justify-content: flex-end;
+  }
+  .info:nth-child(1)::after,
+  .info:nth-child(2)::after {
+    display: none;
+  }
+  .text-container {
+    height: 50vh;
+  }
+  .message-container {
+    height: 50vh;
+    margin-top: 0;
+  }
+  .image {
+    height: 200px;
+    width: 90%;
+  }
+  .image img {
+    right: -180px;
+    display: none;
+  }
+  .paragraph {
+    font-size: 19px;
+    bottom: 75px;
+  }
+  .paragraph span {
+    display: inline;
+  }
+  .description-container {
+    flex-direction: column;
+  }
+  .description {
+    font-size: 18px;
+    line-height: 25px;
+    padding: 0;
+  }
+  .project-description {
+    display: inline-flex;
+  }
+  .type,
+  .name,
+  .agency {
+    display: inline-block;
+    padding-right: 20px;
+  }
+  .projects {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-    color: blanchedalmond;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .project-info {
+    flex: 1;
+  }
+  .project-info a,
+  .links a {
+    font-size: 4.5vw;
+  }
+  .moving-up {
+    visibility: hidden;
+  }
 }
-
-
-
-@media screen and (max-width: 1224px){
-   section{
-       width: 90%;
-   }
-   .description{
-       flex: 2;
-       padding-right: 0;
-   }
-   .paragraph{
-       font-size: 35px;
-   }
-}
-
-@media screen and (max-width: 768px){
-    .text-container{
-        height: 55vh;
-    }
-    .paragraph{
-        bottom: 40px;
-        font-size: 4vw;
-    }
-    .image{
-        height: 300px;
-        width: 90%;
-        right: 0;
-    }
-    .description-container{
-        flex-direction: column;
-    }
-    
- }
-
- @media screen and (max-width: 560px){
-     .info{
-         flex: 1;
-         min-width: 144px;
-     }
-     #year{
-         margin-left: 20px;
-     }
-     .info:nth-child(2){
-         justify-content: flex-end;
-     }
-    .info:nth-child(1)::after, .info:nth-child(2)::after{
-        display: none;
-    }
-    .text-container{
-        height: 50vh;
-    }
-    .message-container{
-        height: 50vh;
-        margin-top: 0;
-    }
-    .image{
-        height: 200px;
-        width: 90%;
-    }
-    .image img{
-        right: -180px;
-        display: none;
-    }
-    .paragraph{
-        font-size: 19px;
-        bottom: 75px;
-    }
-    .paragraph span{
-        display: inline;
-    }
-    .description-container{
-        flex-direction: column;
-    }
-    .description{
-        font-size: 18px;
-        line-height: 25px;
-        padding: 0;
-    }
-    .project-description{
-       display: inline-flex;
-    }
-    .type, .name, .agency{
-        display: inline-block;
-        padding-right: 20px;
-        
-    }
-    .projects{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-around;
-        font-size: 20px;
-        margin-top: 10px;
-    }
-    .project-info{
-        flex: 1;
-    }
-    .project-info a,.links a{
-        font-size: 4.5vw;
-    }
-    .moving-up{
-       visibility: hidden;
-    }
- }
