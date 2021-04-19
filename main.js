@@ -35,7 +35,7 @@ function movingOnScroll() {
 
       if (elemPosition < screenDimension) {
         elements.style.visibility = "visible";
-        elements.style.animation = "animate 2s";
+        elements.style.animation = "animate 1.5s";
       }
     }
   }
@@ -80,8 +80,13 @@ function movingOnScroll() {
 }
 
 function delayHeader() {
+  document.querySelector("html").style.overflow = "hidden";
+
   setTimeout(() => {
     var allInfo = document.querySelectorAll(".info");
     allInfo.forEach((elem) => (elem.style.display = "flex"));
+
+    document.querySelector("html").style.overflow = "visible";
+    document.querySelector("body").style.overflow = "auto";
   }, 2500);
 }

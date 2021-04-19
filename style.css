@@ -16,11 +16,21 @@
 }
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
 }
 body {
   background-color: #f2f2f2;
   color: #326355;
   font-family: "Ogg";
+  /* reload from the top on refresh*/
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
 }
 section {
   width: 80%;
@@ -34,7 +44,7 @@ section {
 
 @keyframes animate {
   from {
-    transform: translateY(+80px);
+    transform: translateY(+180px);
   }
   to {
     transform: translateY(0px);
